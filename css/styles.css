@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:700|Nunito:400');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+/*24px*/
+
+body {
+  background-color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #333;
+}
+
+p {
+  margin-bottom: 1.15rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2.75rem 0 1.05rem;
+  font-family: 'Exo', sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+small,
+.text_small {
+  font-size: 0.8em;
+}
+
+nav,
+main {
+  width: 90%;
+}
+
+header {
+  height: 100vh;
+  max-height: 300px;
+  background: url('../images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5%;
+}
+
+nav {
+  padding-top: 20px;  
+}
+
+nav ul {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.site-name {
+  text-align: center;
+  margin: auto;
+  text-shadow: 0 5px 5px rgba(0,0,0,0.5);
+}
+
+nav a,
+.site-name {
+  color: white;
+}
+
+main {
+  margin: 0 auto;
+}
+
+form {
+  padding-bottom: 20px;
+}
+
+fieldset {
+  display: flex;
+  margin: auto;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 1px rgba(0,0,0,0.2);
+  padding: 20px 0;
+}
+
+label,
+input {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+label:nth-of-type(n + 1) {
+  margin-top: 10px;
+}
+
+input {
+  border-radius: 3px;
+}
+
+input:not([type="submit"]) {
+  border: 1px solid #333;
+  padding: 5px 10px;
+  box-shadow: 0 5px 2px 0 rgba(0,0,0,0.2);
+  margin-top: 5px;
+}
+
+input[type="submit"] {
+  padding: 20px 10px;
+  margin-top: 20px;
+  background: slateblue;
+  color: white;
+  border: none;
+}
