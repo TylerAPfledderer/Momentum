@@ -1,0 +1,107 @@
+// ===== Main Content ===== //
+
+main {
+  @extend %mobile-container-width;
+  margin: 0 auto;
+  max-width: 37em;
+}
+
+section {
+  padding-top: 30px;
+
+  @include respond-to(medium) {
+    padding-top: 50px;
+  }
+}
+
+.form-declare {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__sub {
+    @extend .form-declare;
+    margin-bottom: 1.5rem;
+
+    @include respond-to(medium) {
+      margin-bottom: 1.875rem;
+    }
+  }
+}
+  
+form {
+  @include flexy;
+  margin: 1.5em auto;
+  background: white;
+  border: none;
+  border-radius: 3px;
+  
+  padding: 1.5em 0;
+  max-width: 400px;
+  transition: all .5s;
+
+  &:hover {
+    box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.3);
+    transform: scale(1.01);
+  }
+
+  @include respond-to(medium) {
+    padding: 1.25em;
+  }
+}
+
+label,
+input {
+  display: block;
+  width: 80%;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+label:nth-of-type(n + 2) {
+  margin-top: 10px;
+}
+
+input {
+  border-radius: 5px;
+}
+
+input:not([type="submit"]) {
+  border: 1px solid #333;
+  padding: 10px 10px;
+  box-shadow: 0 5px 2px 0 rgba(0,0,0,0.2);
+  margin-top: 5px;
+  margin-bottom: 1em;
+  
+  @include respond-to(medium) {
+    margin-bottom: 1.0625em;
+  }
+}
+
+input[type="submit"] {
+  padding: 1.0625em 10px;
+  margin-top: 0.9375em;
+  margin-bottom: 0.1875em;
+  background: steelblue;
+  color: white;
+  border: none;
+  border-bottom: 3px solid rgba(0,0,0,0.1);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    border-bottom: none;
+    margin-top: 23px;
+  }
+
+  &:focus {
+    // Get rid of pesky outline. It ruins the mood!
+    outline: none;
+  }
+
+  @include respond-to(medium) {
+    margin-top: 0.8125em;
+  }
+}

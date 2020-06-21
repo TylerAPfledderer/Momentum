@@ -1,0 +1,14 @@
+// ===== Imported Styles ===== //
+
+// Abstract Folder
+@import 'abstracts/placeholders',
+        'abstracts/variables',
+        'abstracts/mixins';
+
+// Base Folder
+@import 'base/normalize',
+        'base/typography';
+
+// Layout Folder
+@import 'layout/header',
+        'layout/main';
