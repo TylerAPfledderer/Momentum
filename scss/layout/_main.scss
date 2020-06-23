@@ -19,6 +19,10 @@ section {
   margin-left: auto;
   margin-right: auto;
 
+  @include respond-to(medium) {
+    margin-bottom: 0.8125rem;
+  }
+
   &__sub {
     @extend .form-declare;
     margin-bottom: 1.5rem;
@@ -35,15 +39,9 @@ form {
   background: white;
   border: none;
   border-radius: 3px;
-  
+  box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.3);
   padding: 1.5em 0;
   max-width: 400px;
-  transition: all .5s;
-
-  &:hover {
-    box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.3);
-    transform: scale(1.01);
-  }
 
   @include respond-to(medium) {
     padding: 1.25em;
@@ -93,7 +91,7 @@ input[type="submit"] {
 
   &:active {
     border-bottom: none;
-    margin-top: 23px;
+    margin-top: 0.9375em + (3/16);
   }
 
   &:focus {
@@ -103,5 +101,9 @@ input[type="submit"] {
 
   @include respond-to(medium) {
     margin-top: 0.8125em;
+
+    &:active {
+      margin-top: 0.8125em + (3/16);
+    }
   }
 }

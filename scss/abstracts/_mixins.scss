@@ -2,53 +2,64 @@
 
 // Media Query Mixin Setup
 
-$breakpoints: (
-  'medium': (min-width: 768px),
-  'large': (min-width: 1024px)
-);
+$breakpoints: ('medium': (min-width: 768px),
+  'large': (min-width: 1024px));
 
 @mixin respond-to($breakpoint) {
   $raw-query: map-get($breakpoints, $breakpoint);
 
   @if $raw-query {
-    $query: if(
-      type-of($raw-query) == 'string',
-      unquote($raw-query),
-      inspect($raw-query)
-    );
+    $query: if(type-of($raw-query)=='string',
+        unquote($raw-query),
+        inspect($raw-query));
 
     @media #{$query} {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @error 'No value found for `#{$breakpoint}`. '
-        +  'Please make sure it is defined in `$breakpoints` map.';
+    +'Please make sure it is defined in `$breakpoints` map.';
   }
 }
 
 // Set Flexbox Styles with Prefixes
 
 @mixin flexy($dis: flex, $dir: column, $wrap: null, $just: null, $item: null) {
+
+  @if ($dis) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: $dis;
-    flex-flow: $dir $wrap;
-    @if $dir == 'column' {
-        -webkit-box-orient: vertical;
-    } @else {
-        -webkit-box-orient: horizontal;
-    }
-    -webkit-box-direction: normal;
-    -ms-flex-flow: $dir $wrap;
-    justify-content: $just;
-    -webkit-box-pack: $just;
-    -ms-flex-pack: $just;
-    align-items: $item;
-    @if $item == 'flex-start' {
-        -ms-flex-align: start;
-    } @else if $item == 'flex-end' {
-        -ms-flex-align: end;
-    } @else {
-        -ms-flex-align: $item;
-    }
+  } @else {
+    display: null;
+  }
+  flex-flow: $dir $wrap;
+  @if $dir=='column' {
+    -webkit-box-orient: vertical;
+  }
+
+  @else {
+    -webkit-box-orient: horizontal;
+  }
+
+  -webkit-box-direction: normal;
+  -ms-flex-flow: $dir $wrap;
+  justify-content: $just;
+  -webkit-box-pack: $just;
+  -ms-flex-pack: $just;
+  align-items: $item;
+
+  @if $item=='flex-start' {
+    -ms-flex-align: start;
+  }
+
+  @else if $item=='flex-end' {
+    -ms-flex-align: end;
+  }
+
+  @else {
+    -ms-flex-align: $item;
+  }
 }
